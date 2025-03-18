@@ -1,0 +1,4 @@
+Hai thuộc tính quan trọng của một hàm băm
+
+1. Uniformity (Tính phân bố đều)
+2. Fast Computation (Tính toán nhanh)
