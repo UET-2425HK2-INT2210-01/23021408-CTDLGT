@@ -1,0 +1,48 @@
+    Đọc m, n từ file "matrix.txt" // m: số hàng, n: số cột
+
+    Khởi tạo ma trận a[1..m][1..n] và prefix[1..m][1..n]
+
+    Đọc dữ liệu ma trận a từ file
+        Đối với i từ 1 đến m
+            Đối với j từ 1 đến n
+                Đọc giá trị vào a[i][j]
+
+    // Tính ma trận prefix sum
+    Đối với i từ 1 đến m
+        Đối với j từ 1 đến n
+            prefix[i][j] = a[i][j] + prefix[i - 1][j]  // Tính tổng prefix cho ma trận
+
+    // Khởi tạo giá trị tối thiểu cho maxSum
+    maxSum = -1000  // Giá trị khởi tạo cực kỳ nhỏ
+    r1, c1, r2, c2 = 0  // Tọa độ của hình chữ nhật có tổng lớn nhất
+
+    // Duyệt qua tất cả các cặp hàng (r1, r2)
+    Đối với i từ 1 đến m
+        Đối với j từ i đến m
+            // Tính tổng cột từ hàng i đến hàng j
+            Đối với k từ 1 đến n
+                temp[k] = prefix[j][k] - prefix[i - 1][k]
+
+            // Áp dụng thuật toán Kadane để tìm tổng lớn nhất của dãy con trong temp
+            sum = 0
+            localL = 1  // Vị trí bắt đầu của dãy con tối ưu
+
+            Đối với k từ 1 đến n
+                Nếu sum < 0
+                    sum = temp[k]  // Khởi tạo lại sum với temp[k]
+                    localL = k     // Cập nhật lại vị trí bắt đầu của dãy con
+                Ngược lại
+                    sum += temp[k]  // Thêm giá trị vào sum
+
+                // Nếu tổng hiện tại lớn hơn maxSum, cập nhật lại maxSum và tọa độ
+                Nếu sum > maxSum
+                    maxSum = sum
+                    r1 = i, r2 = j
+                    c1 = localL, c2 = k
+
+    // Lưu kết quả vào file "matrix.out"
+    Ghi vào file "matrix.out" tọa độ r1, c1, r2, c2 và maxSum
+
+    In ra "Đã lưu trong 'matrix.out'" lên màn hình
+
+
