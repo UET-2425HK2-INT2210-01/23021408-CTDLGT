@@ -1,0 +1,9 @@
+Hàm gcd(x, y):
+    Nếu y bằng 0 thì:
+        Trả về x
+    Ngược lại:
+        Gọi hàm gcd(y, x mod y)
+
+Bắt đầu:
+    Nhập vào hai số x và y
+    Gọi hàm gcd(x, y) và in kết quả ra màn hình

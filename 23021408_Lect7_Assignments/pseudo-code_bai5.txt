@@ -1,0 +1,16 @@
+Hàm generate_permutations(chosen, remaining):
+    nếu remaining rỗng:
+        in chosen
+        trả về
+    
+    cho i từ 0 đến độ_dài(remaining) - 1:
+        ch = remaining[i]  // Chọn một số từ chuỗi remaining
+        new_chosen = chosen + ch  // Thêm số đó vào chuỗi kết quả
+        new_remaining = loại bỏ remaining[i] khỏi remaining
+        gọi generate_permutations(new_chosen, new_remaining)
+
+Bắt đầu chương trình:
+    đọc n
+    tạo chuỗi digits = "123..." (dựa trên n)
+    gọi generate_permutations("", digits)
+

@@ -1,0 +1,11 @@
+Hàm generate_binary(n, binary):
+    nếu độ_dài(binary) == n:
+        in binary
+        trả về
+    generate_binary(n, binary + "0")  // gọi đệ quy thêm '0'
+    generate_binary(n, binary + "1")  // gọi đệ quy thêm '1'
+
+Bắt đầu chương trình chính:
+    đọc n  // nhập số nguyên n từ bàn phím
+    generate_binary(n, "")  // gọi hàm đệ quy với chuỗi rỗng ban đầu
+
