@@ -1,0 +1,23 @@
+Khởi tạo mảng numbers và biến đếm n = 0
+
+Mở file "numbers.txt" để đọc
+Mở file "numbers.sorted" để ghi
+
+Nếu không mở được file thì:
+    Thông báo lỗi và kết thúc chương trình
+
+Lặp: đọc từng số từ file đầu vào
+    Lưu số vào mảng numbers
+    Tăng biến đếm n
+
+Sắp xếp mảng numbers bằng thuật toán nổi bọt:
+    Lặp i từ 0 đến n-2:
+        Lặp j từ 0 đến n-i-2:
+            Nếu numbers[j] > numbers[j+1] thì:
+                Đổi chỗ numbers[j] và numbers[j+1]
+
+Ghi các phần tử đã sắp xếp ra file đầu ra
+
+Đóng cả hai file
+
+Thông báo đã hoàn thành
